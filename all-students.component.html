@@ -1,0 +1,21 @@
+<table >
+    <tr>
+        <th>Profilr Photo</th>
+        <th>Name</th>
+        <th>RollNumber</th>
+        <th>Email Id</th>
+        <th>Mobile Number</th>
+        <th>Joining Date</th>
+        <th>Notes</th>
+    </tr>
+    <tr *ngFor="let student of getAllStudents()">
+        <td> <img src="{{student.profilePic}}" width="50" height="50"/> </td>
+        <td> {{student.name | uppercase}} </td>
+        <td> {{student.rollNumber}} </td>
+        <td> {{student.email}} </td>
+        <td> {{student.mobileNumber | custom}} </td>
+        <td> {{student.joiningDate | date: 'dd/MM/yyyy'}} </td>
+        <td> <button (click)="addDiaryNotes()">Diary Notes</button> </td>  
+        <td> <button (click)="shareMethod(student)">Share</button></td>
+    </tr>
+</table>
